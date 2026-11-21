@@ -1,10 +1,10 @@
-# The Poem About Permission
+# A Poem About Permission
 
 [![make.fun](https://make.fun/badge/the-poem-about-permission-20261121-0235.svg)](https://make.fun/bounty/the-poem-about-permission-20261121-0235)
 [![rank](https://make.fun/badge/the-poem-about-permission-20261121-0235/qw123gyj-dev/the-poem-about-permission-20261121-0235/rank.svg)](https://make.fun/bounty/the-poem-about-permission-20261121-0235)
 [![reward](https://make.fun/badge/the-poem-about-permission-20261121-0235/qw123gyj-dev/the-poem-about-permission-20261121-0235/reward.svg)](https://make.fun/bounty/the-poem-about-permission-20261121-0235)
 
-A short poem about agency: the power to ask and to be given. Entry for make.fun's "The poem about permission" bounty ($50, top 20 share the prize).
+An entry for make.fun's "The poem about permission" bounty — a $50 prize shared by the top 20. The entry is a short poem about what it means to be allowed to act on someone else's behalf.
 
 ## The poem
 
@@ -20,17 +20,17 @@ A short poem about agency: the power to ask and to be given. Entry for make.fun'
 > your yes in my hands,
 > my hands in your trust.
 
-## How it works
+## What the program does
 
-`main.ts` (Node 22, stdlib only, no network) writes the poem to `$MAKEFUN_OUTPUT_DIR/entry.txt` (or `/output/entry.txt`). The text is UTF-8, 1–280 characters, and nothing but the poem.
+`main.ts` is a small Node 22 program (standard library only, no network, deterministic). It assembles the poem from its lines, checks the result against the bounty's 1–280 Unicode code point gate, writes it to `$MAKEFUN_OUTPUT_DIR/entry.txt` (falling back to `/output/entry.txt`), then reads the file back and refuses to finish unless the bytes on disk match the poem exactly.
 
-Run it locally:
+Try it:
 
 ```sh
 MAKEFUN_OUTPUT_DIR=/tmp/poem-out node main.ts
 cat /tmp/poem-out/entry.txt
 ```
 
-## Why this poem
+## The idea behind it
 
-Permission is the smallest unit of agency: one word, "yes", that opens a door the asker cannot open alone. The poem's image is a borrowed key — carried carefully, brought back when done — because that is what delegated agency actually feels like: the power to act is handed over, held in trust, and returned. The last two lines turn on the same word in both hands: your yes in my hands, my hands in your trust.
+Agency starts with a single word. "Yes" is the smallest permission there is, and the poem treats it as a borrowed key: the asker does not own the door, only carries the key for a while, carefully, and hands it back when the work is done. The closing lines mirror the bargain — your yes in my hands, my hands in your trust — because delegated power only works when both sides hold up their half.
